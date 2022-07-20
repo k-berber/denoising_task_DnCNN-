@@ -1,3 +1,5 @@
+import sys
+
 def multiplicate(input_arr):
     """
     Here we have 3 variance
@@ -14,7 +16,6 @@ def multiplicate(input_arr):
     for i in input_arr:
         if i == 0 and check_first_and_second_zero == 0:
             check_first_and_second_zero = 1
-            result_prod = 0
         elif i == 0 and check_first_and_second_zero == 1:
             check_first_and_second_zero = 2
             result_prod = 0
@@ -37,4 +38,5 @@ def multiplicate(input_arr):
             result_array.append(0)
     return result_array
 
+print(multiplicate(eval(sys.argv[1])))
 #
