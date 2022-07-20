@@ -23,7 +23,7 @@ test_dataloader = get_DataLoader(test_clean_data, test_noisy_data, batch_size=1,
 loaded_denoising_model = Denoising_Model(15)
 
 
-model_state_dict = torch.load('./denoiser_epoch4.pth', map_location=torch.device('cpu'))
+model_state_dict = torch.load('./denoiser_best.pth', map_location=torch.device('cpu'))
 #here you should indicate the best model
 
 

@@ -3,7 +3,6 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 
-
 def get_clean_data_paths(path: str):
     clean = 'clean/'
     list_clean = []
@@ -38,6 +37,28 @@ def get_data_from_clean_data_paths(clean_data_paths: list):
                     list_of_clean_data.append(np.load(clean_path).T)
                     list_of_noisy_data.append(np.load(noisy_path).T)
     return list_of_clean_data, list_of_noisy_data
+
+def crop_function(arr1, arr2, step):
+    start_cut_range = arr1.shape[1] - step
+    start_rand = np.random.randint(0, start_cut_range + 1)
+
+    return (arr1[:, start_rand: start_rand + step], arr2[:, start_rand: start_rand + step])
+
+
+def match_function(batch):
+    min_len = 100000
+
+    # extract data from input batch
+    data = [item[0] for item in batch]
+    targets = [item[1] for item in batch]
+    for elem in data:
+        min_len = min(min_len, elem.shape[1])
+
+    temp_pairs = [crop_function(elem[0], elem[1], min_len) for elem in zip(data, targets)]
+    data = [elem[0] for elem in temp_pairs]
+    targets = [elem[1] for elem in temp_pairs]
+    return [torch.tensor(data).float(), torch.tensor(targets).float()]
+
 
 class Detect(Dataset):
     """
