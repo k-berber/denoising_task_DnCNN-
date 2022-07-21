@@ -59,7 +59,7 @@ https://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf
     Необходимо указать правильный путь до тестовых данных. 
     
     Результат очищенных от шума спектограмм будет лежать в
-    репозитории model_predict 
+    репозитории model_predict в формате prediction_i.npy
 
  
  
