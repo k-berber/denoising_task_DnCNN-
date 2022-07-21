@@ -60,6 +60,7 @@ https://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf
     
     Результат очищенных от шума спектограмм будет лежать в
     репозитории model_predict в формате prediction_i.npy
+    для каждой спектограммы.
 
  
  
