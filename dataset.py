@@ -92,4 +92,3 @@ def get_DataLoader(clean_data_list, noisy_data_list, batch_size, shuffle=True):
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=shuffle,
                             collate_fn=match_function, pin_memory=True)
     return dataloader
-

@@ -100,7 +100,7 @@ def Save_results(model, clean_data, noisy_data, device):
         mel_target = sample - target
 
         loss = criterion(mel_prediction, mel_target).item()
-
+ 
         mel_prediction = mel_prediction.squeeze(0).cpu().detach().numpy()  # <-- необходимо для сохранения
 
         file_name = f'model_predict/prediction_{data_idx}.npy'

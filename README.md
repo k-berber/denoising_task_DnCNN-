@@ -54,7 +54,7 @@ https://www4.comp.polyu.edu.hk/~cslzhang/paper/DnCNN.pdf
   
   * Скрипт для запуска (возможно и без обучения) 2:
   
-    python result_denoise.py "./val/val/"
+    python results_denoise.py "./val/val/"
     
     Необходимо указать правильный путь до тестовых данных. 
     
